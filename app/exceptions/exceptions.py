@@ -1,4 +1,4 @@
-class InvalidCPFError(Exception):
+class InvalidPhoneError(Exception):
     ...
 
 class InvalidTypeError(Exception):
@@ -7,5 +7,8 @@ class InvalidTypeError(Exception):
 class InvalidKeysError(Exception):
     ...
 
-class InvalidNotUniqueCpfError(Exception):
+class NotUniqueEmailError(Exception):
+    ...
+
+class NotUniquePhoneError(Exception):
     ...
