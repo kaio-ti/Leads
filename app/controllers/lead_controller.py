@@ -11,14 +11,7 @@ def create_lead():
         current_app.db.session.add(lead)
         current_app.db.session.commit()
 
-        return {
-                "id": lead.id,
-                "email": lead.name,
-                "phone": lead.phone,
-                "creation_date": lead.creation_date,
-                "last_visit": lead.last_visit,
-                "visits": lead.visits
-            }, 201
+        return jsonify(lead), 201
 
     except InvalidTypeError:
         return {"message": "Dados precisam ser strings"}, 400
@@ -42,7 +35,7 @@ def update_leads():
     data = request.json
 
     if list(data.keys()) != ['email'] or type(data['email']) is not str:
-        return {"message": "Dados da requisição inválidos"}, 400
+        return {"message": "Dados da requisição inválidos"}, 404
 
     Leads.update_visit(data)
 
@@ -52,7 +45,7 @@ def delete_leads():
     data = request.json
 
     if list(data.keys()) != ['email'] or type(data['email']) is not str:
-        return {"message": "Dados da requisição inválidos"}, 400
+        return {"message": "Dados da requisição inválidos"}, 404
 
     Leads.leads_deletion(data)
 

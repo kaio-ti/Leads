@@ -19,6 +19,8 @@ class Leads(db.Model):
     email: str
     phone: str
     visits:int
+    creation_date: str
+    last_visit: str
 
     __tablename__ = "lead_cards"
 

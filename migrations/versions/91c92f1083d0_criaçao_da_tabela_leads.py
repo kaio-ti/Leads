@@ -1,8 +1,8 @@
 """Criaçao da tabela leads
 
-Revision ID: 56d6085ce616
+Revision ID: 91c92f1083d0
 Revises: 
-Create Date: 2021-11-23 16:49:55.830551
+Create Date: 2021-11-25 11:15:37.372065
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '56d6085ce616'
+revision = '91c92f1083d0'
 down_revision = None
 branch_labels = None
 depends_on = None
