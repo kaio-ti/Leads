@@ -74,6 +74,8 @@ class Leads(db.Model):
         current_app.db.session.add(specific)
         current_app.db.session.commit()
 
+        return "", 204
+
     def leads_deletion(data):
 
         specific = Leads.query.filter(Leads.email==data['email']).first()
@@ -83,3 +85,4 @@ class Leads(db.Model):
         
         current_app.db.session.delete(specific)
         current_app.db.session.commit()
+        return "", 204

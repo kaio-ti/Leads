@@ -37,9 +37,7 @@ def update_leads():
     if list(data.keys()) != ['email'] or type(data['email']) is not str:
         return {"message": "Dados da requisição inválidos"}, 404
 
-    Leads.update_visit(data)
-
-    return "", 204
+    return Leads.update_visit(data)
 
 def delete_leads():
     data = request.json
@@ -47,6 +45,4 @@ def delete_leads():
     if list(data.keys()) != ['email'] or type(data['email']) is not str:
         return {"message": "Dados da requisição inválidos"}, 404
 
-    Leads.leads_deletion(data)
-
-    return "", 204
+    return Leads.leads_deletion(data)
